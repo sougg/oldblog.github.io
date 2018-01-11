@@ -23,12 +23,12 @@
 <meta property="og:site_name" content="王呈飞的个人博客">
 <meta property="og:description" content="引文在学习系统吞吐量、TPS（QPS）、用户并发量、性能測试概念和公式的时候，多次看到这样一个公式C&amp;#39;≈C+3√C,其中C=nL / T当中C是平均的并发用户数，n是平均每天訪问用户数（login session），L是一天内用户从登录到退出的平均时间（login session的平均时间），T是考察时间长度（一天内多长时间实用户使用系统），C’表示业务并发用户数的峰值。但是这个公式是如何">
 <meta property="og:image" content="https://blog.wangchengfei.top/images/pasted-4.png">
-<meta property="og:image" content="https://images/pasted-6.png/">
-<meta property="og:image" content="https://images/pasted-7.png/">
-<meta property="og:image" content="https://images/pasted-8.png/">
-<meta property="og:image" content="https://images/pasted-9.png/">
-<meta property="og:image" content="https://images/pasted-10.png/">
-<meta property="og:updated_time" content="2018-01-11T07:29:55.745Z">
+<meta property="og:image" content="https://blog.wangchengfei.top/images/pasted-6.png">
+<meta property="og:image" content="https://blog.wangchengfei.top/images/pasted-7.png">
+<meta property="og:image" content="https://blog.wangchengfei.top/images/pasted-8.png">
+<meta property="og:image" content="https://blog.wangchengfei.top/images/pasted-9.png">
+<meta property="og:image" content="https://blog.wangchengfei.top/images/pasted-10.png">
+<meta property="og:updated_time" content="2018-01-11T07:33:32.415Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网站业务并发用户峰值计算公式C‘≈C-3-√C的推导">
 <meta name="twitter:description" content="引文在学习系统吞吐量、TPS（QPS）、用户并发量、性能測试概念和公式的时候，多次看到这样一个公式C&amp;#39;≈C+3√C,其中C=nL / T当中C是平均的并发用户数，n是平均每天訪问用户数（login session），L是一天内用户从登录到退出的平均时间（login session的平均时间），T是考察时间长度（一天内多长时间实用户使用系统），C’表示业务并发用户数的峰值。但是这个公式是如何">
@@ -313,13 +313,13 @@
 <h6 id="置信水平"><a href="#置信水平" class="headerlink" title="置信水平"></a>置信水平</h6><p>置信水平是指特定个体对待特定命题真实性相信的程度，也就是概率是对个人信念合理性的量度。概率的置信度解释表明，事件本身并没有什么概率，事件之所以指派有概率只是指派概率的人头脑中所具有的信念证据。置信水平是指总体参数值落在样本统计值某一区内的概率；而置信区间是指在某一置信水平下，样本统计值与总体参数值间误差范围。置信区间越大，置信水平越高。<br><a href="https://baike.baidu.com/item/%E7%BD%AE%E4%BF%A1%E6%B0%B4%E5%B9%B3/7442548?fr=aladdin" target="_blank" rel="noopener">https://baike.baidu.com/item/%E7%BD%AE%E4%BF%A1%E6%B0%B4%E5%B9%B3/7442548?fr=aladdin</a></p>
 <h6 id="置信区间"><a href="#置信区间" class="headerlink" title="置信区间"></a>置信区间</h6><p>置信区间是指由样本统计量所构造的总体参数的估计区间。在统计学中，一个概率样本的置信区间（Confidence interval）是对这个样本的某个总体参数的区间估计。置信区间展现的是这个参数的真实值有一定概率落在测量结果的周围的程度。置信区间给出的是被测量参数的测量值的可信程度，即前面所要求的“一个概率”。<br><a href="https://baike.baidu.com/item/%E7%BD%AE%E4%BF%A1%E5%8C%BA%E9%97%B4/7442583?fr=aladdin" target="_blank" rel="noopener">https://baike.baidu.com/item/%E7%BD%AE%E4%BF%A1%E5%8C%BA%E9%97%B4/7442583?fr=aladdin</a></p>
 <h6 id="泊松分布的参数区间估计"><a href="#泊松分布的参数区间估计" class="headerlink" title="泊松分布的参数区间估计"></a>泊松分布的参数区间估计</h6><p><img src="/images/pasted-4.png" alt="upload successful"></p>
-<p><img src="\\images\pasted-6.png\" alt="upload successful"></p>
-<p><img src="\\images\pasted-7.png\" alt="upload successful"></p>
-<p><img src="\\images\pasted-8.png\" alt="upload successful"></p>
+<p><img src="/images/pasted-6.png" alt="upload successful"></p>
+<p><img src="/images/pasted-7.png" alt="upload successful"></p>
+<p><img src="/images/pasted-8.png" alt="upload successful"></p>
 <p><a href="https://wenku.baidu.com/view/09504bc089eb172ded63b787.html" target="_blank" rel="noopener">https://wenku.baidu.com/view/09504bc089eb172ded63b787.html</a></p>
 <h5 id="推导"><a href="#推导" class="headerlink" title="推导"></a>推导</h5><h6 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h6><p>假设用户的login session产生符合泊松分布</p>
-<h6 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h6><p><img src="\\images\pasted-9.png\" alt="upload successful"></p>
-<p><img src="\\images\pasted-10.png\" alt="upload successful"><br>从泊松分布的分布图来看，x轴表示参数k的值，该值在我们这里即表示网站某一时刻的用户并发量，y轴表示发生的概率，参数λ是单位时间(或单位面积)内随机事件的平均发生率。<br>求并发用户峰值的问题可以转化为x轴参数k可以取的最大值，即在某一置信区间下该分布的参数区间估计的右侧最大值,即求：泊松分布的参数区间估计右闭区间<code>X+uα/2*√X</code>的值。<br>当显著性水平α=0，即取100%置信水平时，查标准正态分布表可知，uα/2最大取3，即<br><code>X+3√X</code><br>其中X就是网站平均并发用户量C，所以有峰值<br><code>C&#39;=C+3√C</code></p>
+<h6 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h6><p><img src="/images/pasted-9.png" alt="upload successful"></p>
+<p><img src="/images/pasted-10.png" alt="upload successful"><br>从泊松分布的分布图来看，x轴表示参数k的值，该值在我们这里即表示网站某一时刻的用户并发量，y轴表示发生的概率，参数λ是单位时间(或单位面积)内随机事件的平均发生率。<br>求并发用户峰值的问题可以转化为x轴参数k可以取的最大值，即在某一置信区间下该分布的参数区间估计的右侧最大值,即求：泊松分布的参数区间估计右闭区间<code>X+uα/2*√X</code>的值。<br>当显著性水平α=0，即取100%置信水平时，查标准正态分布表可知，uα/2最大取3，即<br><code>X+3√X</code><br>其中X就是网站平均并发用户量C，所以有峰值<br><code>C&#39;=C+3√C</code></p>
 <h5 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h5><p>该公式是由泊松分布的参数估计区间取最大值的情况下得到的。<br>但是这个结果是在非常理想的情况下产生的，并不是计算并发用户峰值的万能公式。<br>可参考<a href="http://dy.163.com/v2/article/detail/CEBT1NFA05169NIJ.html" target="_blank" rel="noopener">http://dy.163.com/v2/article/detail/CEBT1NFA05169NIJ.html</a>  </p>
 <p>此外泊松分布在计算机领域有很多类似的应用，例如设计游戏地图的资源随机生成等。</p>
 
@@ -333,7 +333,7 @@
         <p><span>本文标题:</span><a href="/2018/01/11/网站业务并发用户峰值计算公式C‘≈C-3-√3的推导/">网站业务并发用户峰值计算公式C‘≈C-3-√C的推导</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">王呈飞</a></p>
         <p><span>发布时间:</span>2018-01-11, 11:14:00</p>
-        <p><span>最后更新:</span>2018-01-11, 15:29:55</p>
+        <p><span>最后更新:</span>2018-01-11, 15:33:32</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/01/11/网站业务并发用户峰值计算公式C‘≈C-3-√3的推导/" title="网站业务并发用户峰值计算公式C‘≈C-3-√C的推导">https://blog.wangchengfei.top/2018/01/11/网站业务并发用户峰值计算公式C‘≈C-3-√3的推导/</a>
             <span class="copy-path" data-clipboard-text="原文: https://blog.wangchengfei.top/2018/01/11/网站业务并发用户峰值计算公式C‘≈C-3-√3的推导/　　作者: 王呈飞" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
