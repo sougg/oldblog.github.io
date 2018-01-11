@@ -15,16 +15,23 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="引文在学习系统吞吐量、TPS（QPS）、用户并发量、性能測试概念和公式的时候，多次看到这样一个公式C&amp;#39;≈C+3√C,其中C=nL / T当中C是平均的并发用户数，n是平均每天訪问用户数（login session），L是一天内用户从登录到退出的平均时间（login session的平均时间），T是考察时间长度（一天内多长时间实用户使用系统），C’表示业务并发用户数的峰值。但是这个公式是如何">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://blog.wangchengfei.top/2018/01/09/hello-world/index.html">
+<meta property="og:title" content="网站业务并发用户峰值计算公式C‘≈C-3-√C的推导">
+<meta property="og:url" content="https://blog.wangchengfei.top/2018/01/11/网站业务并发用户峰值计算公式C‘≈C-3-√3的推导/index.html">
 <meta property="og:site_name" content="王呈飞的个人博客">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2018-01-09T03:11:50.937Z">
+<meta property="og:description" content="引文在学习系统吞吐量、TPS（QPS）、用户并发量、性能測试概念和公式的时候，多次看到这样一个公式C&amp;#39;≈C+3√C,其中C=nL / T当中C是平均的并发用户数，n是平均每天訪问用户数（login session），L是一天内用户从登录到退出的平均时间（login session的平均时间），T是考察时间长度（一天内多长时间实用户使用系统），C’表示业务并发用户数的峰值。但是这个公式是如何">
+<meta property="og:image" content="https://images/pasted-4.png/">
+<meta property="og:image" content="https://images/pasted-6.png/">
+<meta property="og:image" content="https://images/pasted-7.png/">
+<meta property="og:image" content="https://images/pasted-8.png/">
+<meta property="og:image" content="https://images/pasted-9.png/">
+<meta property="og:image" content="https://images/pasted-10.png/">
+<meta property="og:updated_time" content="2018-01-11T07:11:26.634Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="网站业务并发用户峰值计算公式C‘≈C-3-√C的推导">
+<meta name="twitter:description" content="引文在学习系统吞吐量、TPS（QPS）、用户并发量、性能測试概念和公式的时候，多次看到这样一个公式C&amp;#39;≈C+3√C,其中C=nL / T当中C是平均的并发用户数，n是平均每天訪问用户数（login session），L是一天内用户从登录到退出的平均时间（login session的平均时间），T是考察时间长度（一天内多长时间实用户使用系统），C’表示业务并发用户数的峰值。但是这个公式是如何">
+<meta name="twitter:image" content="https://images/pasted-4.png/">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -56,7 +63,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Hello World | 王呈飞的个人博客</title>
+<title>网站业务并发用户峰值计算公式C‘≈C-3-√C的推导 | 王呈飞的个人博客</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -256,11 +263,11 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-网站业务并发用户峰值计算公式C‘≈C-3-√3的推导" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/01/09/hello-world/" class="article-date">
-      <time datetime="2018-01-09T03:11:50.937Z" itemprop="datePublished">2018-01-09</time>
+      <a href="/2018/01/11/网站业务并发用户峰值计算公式C‘≈C-3-√3的推导/" class="article-date">
+      <time datetime="2018-01-11T03:14:52.000Z" itemprop="datePublished">2018-01-11</time>
 </a>
 
 
@@ -275,7 +282,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      网站业务并发用户峰值计算公式C‘≈C-3-√C的推导
     </h1>
   
 
@@ -292,15 +299,20 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h4 id="引文"><a href="#引文" class="headerlink" title="引文"></a>引文</h4><p>在学习系统吞吐量、TPS（QPS）、用户并发量、性能測试概念和公式的时候，多次看到这样一个公式<br><code>C&#39;≈C+3√C</code>,其中<code>C=nL / T</code><br>当中C是平均的并发用户数，n是平均每天訪问用户数（login session），L是一天内用户从登录到退出的平均时间（login session的平均时间），T是考察时间长度（一天内多长时间实用户使用系统），C’表示业务并发用户数的峰值。但是这个公式是如何得出的呢？<br><a href="https://www.cnblogs.com/cynchanpin/p/7365859.html" target="_blank" rel="noopener">https://www.cnblogs.com/cynchanpin/p/7365859.html</a></p>
+<h4 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h4><h5 id="数学基础"><a href="#数学基础" class="headerlink" title="数学基础"></a>数学基础</h5><h6 id="泊松分布"><a href="#泊松分布" class="headerlink" title="泊松分布"></a>泊松分布</h6><p>该公式的导出依赖概率论的一个重要的离散概率分布——泊松分布，关于泊松分布的概率函数和分布性质可参考百度百科<br><a href="https://baike.baidu.com/item/%E6%B3%8A%E6%9D%BE%E5%88%86%E5%B8%83/1442110?fr=aladdin" target="_blank" rel="noopener">https://baike.baidu.com/item/%E6%B3%8A%E6%9D%BE%E5%88%86%E5%B8%83/1442110?fr=aladdin</a></p>
+<h6 id="置信水平"><a href="#置信水平" class="headerlink" title="置信水平"></a>置信水平</h6><p>置信水平是指特定个体对待特定命题真实性相信的程度，也就是概率是对个人信念合理性的量度。概率的置信度解释表明，事件本身并没有什么概率，事件之所以指派有概率只是指派概率的人头脑中所具有的信念证据。置信水平是指总体参数值落在样本统计值某一区内的概率；而置信区间是指在某一置信水平下，样本统计值与总体参数值间误差范围。置信区间越大，置信水平越高。<br><a href="https://baike.baidu.com/item/%E7%BD%AE%E4%BF%A1%E6%B0%B4%E5%B9%B3/7442548?fr=aladdin" target="_blank" rel="noopener">https://baike.baidu.com/item/%E7%BD%AE%E4%BF%A1%E6%B0%B4%E5%B9%B3/7442548?fr=aladdin</a></p>
+<h6 id="置信区间"><a href="#置信区间" class="headerlink" title="置信区间"></a>置信区间</h6><p>置信区间是指由样本统计量所构造的总体参数的估计区间。在统计学中，一个概率样本的置信区间（Confidence interval）是对这个样本的某个总体参数的区间估计。置信区间展现的是这个参数的真实值有一定概率落在测量结果的周围的程度。置信区间给出的是被测量参数的测量值的可信程度，即前面所要求的“一个概率”。<br><a href="https://baike.baidu.com/item/%E7%BD%AE%E4%BF%A1%E5%8C%BA%E9%97%B4/7442583?fr=aladdin" target="_blank" rel="noopener">https://baike.baidu.com/item/%E7%BD%AE%E4%BF%A1%E5%8C%BA%E9%97%B4/7442583?fr=aladdin</a></p>
+<h6 id="泊松分布的参数区间估计"><a href="#泊松分布的参数区间估计" class="headerlink" title="泊松分布的参数区间估计"></a>泊松分布的参数区间估计</h6><p><img src="\\images\pasted-4.png\" alt="upload successful"></p>
+<p><img src="\\images\pasted-6.png\" alt="upload successful"></p>
+<p><img src="\\images\pasted-7.png\" alt="upload successful"></p>
+<p><img src="\\images\pasted-8.png\" alt="upload successful"></p>
+<p><a href="https://wenku.baidu.com/view/09504bc089eb172ded63b787.html" target="_blank" rel="noopener">https://wenku.baidu.com/view/09504bc089eb172ded63b787.html</a></p>
+<h5 id="推导"><a href="#推导" class="headerlink" title="推导"></a>推导</h5><h6 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h6><p>假设用户的login session产生符合泊松分布</p>
+<h6 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h6><p><img src="\\images\pasted-9.png\" alt="upload successful"></p>
+<p><img src="\\images\pasted-10.png\" alt="upload successful"><br>从泊松分布的分布图来看，x轴表示参数k的值，该值在我们这里即表示网站某一时刻的用户并发量，y轴表示发生的概率，参数λ是单位时间(或单位面积)内随机事件的平均发生率。<br>求并发用户峰值的问题可以转化为x轴参数k可以取的最大值，即在某一置信区间下该分布的参数区间估计的右侧最大值,即求：泊松分布的参数区间估计右闭区间<code>X+uα/2*√X</code>的值。<br>当显著性水平α=0，即取100%置信水平时，查标准正态分布表可知，uα/2最大取3，即<br><code>X+3√X</code><br>其中X就是网站平均并发用户量C，所以有峰值<br><code>C&#39;=C+3√C</code></p>
+<h5 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h5><p>该公式是由泊松分布的参数估计区间取最大值的情况下得到的。<br>但是这个结果是在非常理想的情况下产生的，并不是计算并发用户峰值的万能公式。<br>可参考<a href="http://dy.163.com/v2/article/detail/CEBT1NFA05169NIJ.html" target="_blank" rel="noopener">http://dy.163.com/v2/article/detail/CEBT1NFA05169NIJ.html</a>  </p>
+<p>此外泊松分布在计算机领域有很多类似的应用，例如设计游戏地图的资源随机生成等。</p>
 
       
     </div>
@@ -309,13 +321,13 @@
   
     
     <div class="copyright">
-        <p><span>Title:</span><a href="/2018/01/09/hello-world/">Hello World</a></p>
+        <p><span>Title:</span><a href="/2018/01/11/网站业务并发用户峰值计算公式C‘≈C-3-√3的推导/">网站业务并发用户峰值计算公式C‘≈C-3-√C的推导</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">王呈飞</a></p>
-        <p><span>Created:</span>2018-01-09, 11:11:50</p>
-        <p><span>Updated:</span>2018-01-09, 11:11:50</p>
+        <p><span>Created:</span>2018-01-11, 11:14:52</p>
+        <p><span>Updated:</span>2018-01-11, 15:11:26</p>
         <p>
-            <span>Full URL:</span><a class="post-url" href="/2018/01/09/hello-world/" title="Hello World">https://blog.wangchengfei.top/2018/01/09/hello-world/</a>
-            <span class="copy-path" data-clipboard-text="From https://blog.wangchengfei.top/2018/01/09/hello-world/　　By 王呈飞" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <span>Full URL:</span><a class="post-url" href="/2018/01/11/网站业务并发用户峰值计算公式C‘≈C-3-√3的推导/" title="网站业务并发用户峰值计算公式C‘≈C-3-√C的推导">https://blog.wangchengfei.top/2018/01/11/网站业务并发用户峰值计算公式C‘≈C-3-√3的推导/</a>
+            <span class="copy-path" data-clipboard-text="From https://blog.wangchengfei.top/2018/01/11/网站业务并发用户峰值计算公式C‘≈C-3-√3的推导/　　By 王呈飞" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -327,12 +339,12 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/01/11/网站业务并发用户峰值计算公式C‘≈C-3-√3的推导/">
-                    网站业务并发用户峰值计算公式C‘≈C-3-√C的推导
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/01/09/hello-world/">
+                    Hello World
                 </a>
             </div>
-        
         
     </nav>
 
@@ -342,7 +354,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#引文"><span class="toc-number">1.</span> <span class="toc-text">引文</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#正文"><span class="toc-number">2.</span> <span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#数学基础"><span class="toc-number">2.1.</span> <span class="toc-text">数学基础</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#泊松分布"><span class="toc-number">2.1.1.</span> <span class="toc-text">泊松分布</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#置信水平"><span class="toc-number">2.1.2.</span> <span class="toc-text">置信水平</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#置信区间"><span class="toc-number">2.1.3.</span> <span class="toc-text">置信区间</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#泊松分布的参数区间估计"><span class="toc-number">2.1.4.</span> <span class="toc-text">泊松分布的参数区间估计</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#推导"><span class="toc-number">2.2.</span> <span class="toc-text">推导</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#前提"><span class="toc-number">2.2.1.</span> <span class="toc-text">前提</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#证明"><span class="toc-number">2.2.2.</span> <span class="toc-text">证明</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#结论"><span class="toc-number">2.3.</span> <span class="toc-text">结论</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -378,7 +390,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Hello World　| 王呈飞的个人博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"网站业务并发用户峰值计算公式C‘≈C-3-√C的推导　| 王呈飞的个人博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -398,15 +410,15 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/01/11/网站业务并发用户峰值计算公式C‘≈C-3-√3的推导/" title="Pre: 网站业务并发用户峰值计算公式C‘≈C-3-√C的推导">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
         
 
         <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
+            <a href="/2018/01/09/hello-world/" title="Next: Hello World">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
 
