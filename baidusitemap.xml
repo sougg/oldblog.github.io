@@ -2,17 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     
-    
-    
   <url>
     <loc>https://blog.wangchengfei.top/2018/01/11/%E7%BD%91%E7%AB%99%E4%B8%9A%E5%8A%A1%E5%B9%B6%E5%8F%91%E7%94%A8%E6%88%B7%E5%B3%B0%E5%80%BC%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8FC%E2%80%98%E2%89%88C-3-%E2%88%9A3%E7%9A%84%E6%8E%A8%E5%AF%BC/</loc>
-    <lastmod>2018-01-11T07:36:56.714Z</lastmod>
+    <lastmod>2018-01-11T12:45:13.869Z</lastmod>
     <data>
         <display>
         <title>网站业务并发用户峰值计算公式C‘≈C+3√C的推导</title>
         <pubTime>2018-01-11T03:14:00.000Z</pubTime>
         
         <tag>数学与算法 </tag>
+         
+        <tag>泊松分布 </tag>
+         
+        <tag>并发 </tag>
+         
+        <tag>并发峰值 </tag>
+         
+        <tag>并发公式 </tag>
          
          
            
@@ -23,6 +29,8 @@
     </data>
     </url>
 
+    
+    
     
   <url>
     <loc>https://blog.wangchengfei.top/2018/01/09/hello-world/</loc>
