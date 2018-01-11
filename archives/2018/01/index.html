@@ -2,11 +2,6 @@
 <html >
 <head>
 
-    <!--[if lt IE 9]>
-        <style>body {display: none; background: none !important} </style>
-        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
-    <![endif]-->
-
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -73,13 +68,17 @@
 </script>
 
 
-    <script> yiliaConfig.jquery_ui = [false]; </script>
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
 
 
 
     <script> yiliaConfig.rootUrl = "\/";</script>
 
 
+
+    <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56ff76c972fc0cf9"></script>
 
 
 
@@ -166,9 +165,13 @@
                             
                                 <a class="fa Email" href="mailto:123@123.com" title="Email"></a>
                             
-                                <a class="fa GitHub" href="#" title="GitHub"></a>
+                                <a class="fa GitHub" href="https://github.com/sougg" title="GitHub"></a>
                             
-                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                                <a class="fa 知乎" href="https://www.zhihu.com/people/wang-cheng-fei-38/columns" title="知乎"></a>
+                            
+                                <a class="fa QQ" href="/596621768" title="QQ"></a>
+                            
+                                <a class="fa 微信" href="/s596621768" title="微信"></a>
                             
                         </ul>
                     </nav>
@@ -200,7 +203,7 @@
                 
                 <section class="switch-part switch-part4">
                 
-                    <div id="js-aboutme">专注于前端</div>
+                    <div id="js-aboutme">开发者，主java，南京途牛科技有限公司</div>
                 </section>
                 
             </div>
@@ -242,9 +245,13 @@
                             
                                 <a class="fa Email" target="_blank" href="mailto:123@123.com" title="Email"></a>
                             
-                                <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
+                                <a class="fa GitHub" target="_blank" href="https://github.com/sougg" title="GitHub"></a>
                             
-                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                                <a class="fa 知乎" target="_blank" href="https://www.zhihu.com/people/wang-cheng-fei-38/columns" title="知乎"></a>
+                            
+                                <a class="fa QQ" target="_blank" href="/596621768" title="QQ"></a>
+                            
+                                <a class="fa 微信" target="_blank" href="/s596621768" title="微信"></a>
                             
                         </ul>
             </nav>
@@ -370,6 +377,8 @@
 </footer>
     </div>
     
+    <script src="/js/GithubRepoWidget.js"></script>
+
 <script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
 
     <script>
@@ -392,6 +401,27 @@
 
 
 
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
 <div class="scroll" id="scroll">
     <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
     <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
@@ -401,12 +431,12 @@
     // Open in New Window
     
         var oOpenInNew = {
-            
-            
-            
-            
-            
-            
+             github: ".github-widget a", 
+             title: "a.article-title, .article-more-link a", 
+             post: ".article-entry a[href], .copyright a[href]", 
+             tags: ".article-tag a", 
+             categories: ".article-category a, a.tag-list-link", 
+             articleNav: "#article-nav a, #post-nav-button a", 
              archives: ".archive-article-title", 
              miniArchives: "a.post-list-link", 
             

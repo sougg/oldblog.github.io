@@ -505,6 +505,9 @@ a {
   #container .toc-article a {
     color: #767676;
   }
+  #container li.toc-item {
+    line-height: 1.2;
+  }
   #container .copyright {
     width: 90%;
     padding: 0.5em 0.8em;
@@ -537,6 +540,9 @@ a {
   }
   #container .ua {
     display: none !important;
+  }
+  #container .github-text {
+    display: none;
   }
   #container .copyright {
     font-size: 16px;
@@ -1077,6 +1083,37 @@ color
 }
 .post-list li:hover a {
   color: #88acdb;
+}
+.article-entry .github-widget h3::after {
+  content: none;
+}
+.article-entry .github-widget .github-box {
+  font-size: 0.8125rem;
+}
+.article-entry .github-widget .github-box .github-box-title h3 {
+  font-size: 1rem;
+}
+.article-entry .github-widget .github-box .github-box-title .github-stats {
+  font-size: 0.6875rem;
+}
+.article-entry .github-widget .github-box .updated {
+  font-size: 0.6875rem;
+}
+.article-entry .github-widget .github-box .download {
+  font-size: 0.75rem;
+}
+.ui-tooltip {
+  padding: 6px;
+  max-width: 30em;
+  -webkit-box-shadow: 0 0 0.8em rgba(0,0,0,0.6);
+  box-shadow: 0 0 0.8em rgba(0,0,0,0.6);
+  color: #fff;
+  font-family: "Lucida Grande", Verdana, "Helvetica Neue", Arial, "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+  font-size: 0.9em;
+  background: rgba(0,0,0,0.65);
+}
+body .ui-tooltip {
+  border: 1px solid #fff;
 }
 .pace .pace-progress {
   background: #77b6ff;
@@ -1760,6 +1797,20 @@ li:hover {
   padding-left: 1.25em;
   margin: 4px 0;
 }
+#toc a.toc-link {
+  display: inline-block;
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+#toc li.toc-item {
+  line-height: 1.45em;
+}
+#toc li.toc-item > i {
+  position: relative;
+  bottom: 0.35em;
+}
 .copyright {
   width: 85%;
   max-width: 45em;
@@ -2376,6 +2427,10 @@ pre .javascript .function {
 }
 .bdsharebuttonbox .bds_twi {
   background: #21abf4 !important;
+}
+.addthis_sharing_toolbox {
+  margin-top: 0.5em;
+  margin-left: -2px;
 }
 #page-nav {
   text-align: center;
