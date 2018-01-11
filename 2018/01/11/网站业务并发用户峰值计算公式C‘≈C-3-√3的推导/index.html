@@ -18,7 +18,7 @@
 <meta name="description" content="引文在学习系统吞吐量、TPS（QPS）、用户并发量、性能測试概念和公式的时候，多次看到这样一个公式C&amp;#39;≈C+3√C,其中C=nL / T当中C是平均的并发用户数，n是平均每天訪问用户数（login session），L是一天内用户从登录到退出的平均时间（login session的平均时间），T是考察时间长度（一天内多长时间实用户使用系统），C’表示业务并发用户数的峰值。但是这个公式是如何">
 <meta name="keywords" content="数学与算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="网站业务并发用户峰值计算公式C‘≈C-3-√C的推导">
+<meta property="og:title" content="网站业务并发用户峰值计算公式C‘≈C+3√C的推导">
 <meta property="og:url" content="https://blog.wangchengfei.top/2018/01/11/网站业务并发用户峰值计算公式C‘≈C-3-√3的推导/index.html">
 <meta property="og:site_name" content="王呈飞的个人博客">
 <meta property="og:description" content="引文在学习系统吞吐量、TPS（QPS）、用户并发量、性能測试概念和公式的时候，多次看到这样一个公式C&amp;#39;≈C+3√C,其中C=nL / T当中C是平均的并发用户数，n是平均每天訪问用户数（login session），L是一天内用户从登录到退出的平均时间（login session的平均时间），T是考察时间长度（一天内多长时间实用户使用系统），C’表示业务并发用户数的峰值。但是这个公式是如何">
@@ -28,9 +28,9 @@
 <meta property="og:image" content="https://blog.wangchengfei.top/images/pasted-8.png">
 <meta property="og:image" content="https://blog.wangchengfei.top/images/pasted-9.png">
 <meta property="og:image" content="https://blog.wangchengfei.top/images/pasted-10.png">
-<meta property="og:updated_time" content="2018-01-11T07:33:32.415Z">
+<meta property="og:updated_time" content="2018-01-11T07:36:56.714Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="网站业务并发用户峰值计算公式C‘≈C-3-√C的推导">
+<meta name="twitter:title" content="网站业务并发用户峰值计算公式C‘≈C+3√C的推导">
 <meta name="twitter:description" content="引文在学习系统吞吐量、TPS（QPS）、用户并发量、性能測试概念和公式的时候，多次看到这样一个公式C&amp;#39;≈C+3√C,其中C=nL / T当中C是平均的并发用户数，n是平均每天訪问用户数（login session），L是一天内用户从登录到退出的平均时间（login session的平均时间），T是考察时间长度（一天内多长时间实用户使用系统），C’表示业务并发用户数的峰值。但是这个公式是如何">
 <meta name="twitter:image" content="https://blog.wangchengfei.top/images/pasted-4.png">
 
@@ -64,7 +64,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>网站业务并发用户峰值计算公式C‘≈C-3-√C的推导 | 王呈飞的个人博客</title>
+<title>网站业务并发用户峰值计算公式C‘≈C+3√C的推导 | 王呈飞的个人博客</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -283,7 +283,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      网站业务并发用户峰值计算公式C‘≈C-3-√C的推导
+      网站业务并发用户峰值计算公式C‘≈C+3√C的推导
     </h1>
   
 
@@ -330,12 +330,12 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/01/11/网站业务并发用户峰值计算公式C‘≈C-3-√3的推导/">网站业务并发用户峰值计算公式C‘≈C-3-√C的推导</a></p>
+        <p><span>本文标题:</span><a href="/2018/01/11/网站业务并发用户峰值计算公式C‘≈C-3-√3的推导/">网站业务并发用户峰值计算公式C‘≈C+3√C的推导</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">王呈飞</a></p>
         <p><span>发布时间:</span>2018-01-11, 11:14:00</p>
-        <p><span>最后更新:</span>2018-01-11, 15:33:32</p>
+        <p><span>最后更新:</span>2018-01-11, 15:36:56</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/01/11/网站业务并发用户峰值计算公式C‘≈C-3-√3的推导/" title="网站业务并发用户峰值计算公式C‘≈C-3-√C的推导">https://blog.wangchengfei.top/2018/01/11/网站业务并发用户峰值计算公式C‘≈C-3-√3的推导/</a>
+            <span>原始链接:</span><a class="post-url" href="/2018/01/11/网站业务并发用户峰值计算公式C‘≈C-3-√3的推导/" title="网站业务并发用户峰值计算公式C‘≈C+3√C的推导">https://blog.wangchengfei.top/2018/01/11/网站业务并发用户峰值计算公式C‘≈C-3-√3的推导/</a>
             <span class="copy-path" data-clipboard-text="原文: https://blog.wangchengfei.top/2018/01/11/网站业务并发用户峰值计算公式C‘≈C-3-√3的推导/　　作者: 王呈飞" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -399,7 +399,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"网站业务并发用户峰值计算公式C‘≈C-3-√C的推导　| 王呈飞的个人博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"网站业务并发用户峰值计算公式C‘≈C+3√C的推导　| 王呈飞的个人博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -431,7 +431,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/01/11/网站业务并发用户峰值计算公式C‘≈C-3-√3的推导/">网站业务并发用户峰值计算公式C‘≈C-3-√C的推导</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/09/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/01/11/网站业务并发用户峰值计算公式C‘≈C-3-√3的推导/">网站业务并发用户峰值计算公式C‘≈C+3√C的推导</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/09/hello-world/">Hello World</a></li></ul>
 
 
 
