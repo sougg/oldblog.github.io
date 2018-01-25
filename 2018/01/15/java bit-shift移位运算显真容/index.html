@@ -6,17 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://blog.wangchengfei.top">
-  <title>王呈飞的个人微博</title>
+  <title>java bit shift移位运算显真容 | 王呈飞的个人微博</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="developer">
-<meta property="og:type" content="website">
-<meta property="og:title" content="王呈飞的个人微博">
-<meta property="og:url" content="https://blog.wangchengfei.top/index.html">
+  <meta name="description" content="引文在学习java三个基础的移位操作符时，往往聚焦的移位操作符本身是左移”&amp;lt;&amp;lt;”，带符号右移”&amp;gt;&amp;gt;”还是无符号右移”&amp;gt;&amp;gt;&amp;gt;”，而忽略了左右操作数对结果的影响，以下输出打印的结果是什么呢？ System.out.println(0xff &amp;gt;&amp;gt;&amp;gt; 7); System.out.println((((byte) 0xff) &amp;gt;&amp;gt;&amp;g">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java bit shift移位运算显真容">
+<meta property="og:url" content="https://blog.wangchengfei.top/2018/01/15/java bit-shift移位运算显真容/index.html">
 <meta property="og:site_name" content="王呈飞的个人微博">
-<meta property="og:description" content="developer">
+<meta property="og:description" content="引文在学习java三个基础的移位操作符时，往往聚焦的移位操作符本身是左移”&amp;lt;&amp;lt;”，带符号右移”&amp;gt;&amp;gt;”还是无符号右移”&amp;gt;&amp;gt;&amp;gt;”，而忽略了左右操作数对结果的影响，以下输出打印的结果是什么呢？ System.out.println(0xff &amp;gt;&amp;gt;&amp;gt; 7); System.out.println((((byte) 0xff) &amp;gt;&amp;gt;&amp;g">
+<meta property="og:updated_time" content="2018-01-25T06:59:34.659Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="王呈飞的个人微博">
-<meta name="twitter:description" content="developer">
+<meta name="twitter:title" content="java bit shift移位运算显真容">
+<meta name="twitter:description" content="引文在学习java三个基础的移位操作符时，往往聚焦的移位操作符本身是左移”&amp;lt;&amp;lt;”，带符号右移”&amp;gt;&amp;gt;”还是无符号右移”&amp;gt;&amp;gt;&amp;gt;”，而忽略了左右操作数对结果的影响，以下输出打印的结果是什么呢？ System.out.println(0xff &amp;gt;&amp;gt;&amp;gt; 7); System.out.println((((byte) 0xff) &amp;gt;&amp;gt;&amp;g">
   
   
     <link rel="icon" href="/favicon.png">
@@ -150,16 +151,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-java bit-shift移位运算显真容" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-java bit-shift移位运算显真容" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/15/java bit-shift移位运算显真容/">java bit shift移位运算显真容</a>
+    <h1 class="article-title" itemprop="name">
+      java bit shift移位运算显真容
     </h1>
   
 
@@ -202,6 +201,37 @@
       
 
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢~<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/images/zhifubao.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/images/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -209,16 +239,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/15/java bit-shift移位运算显真容/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://blog.wangchengfei.top/2018/01/15/java bit-shift移位运算显真容/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2018/01/11/网站业务并发用户峰值计算公式C‘≈C-3-√3的推导/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">网站业务并发用户峰值计算公式C‘≈C+3√C的推导</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -238,193 +327,24 @@
 
 
 
-
   
-    <article id="post-网站业务并发用户峰值计算公式C‘≈C-3-√3的推导" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/11/网站业务并发用户峰值计算公式C‘≈C-3-√3的推导/">网站业务并发用户峰值计算公式C‘≈C+3√C的推导</a>
-    </h1>
   
 
-        
-        <a href="/2018/01/11/网站业务并发用户峰值计算公式C‘≈C-3-√3的推导/" class="archive-article-date">
-  	<time datetime="2018-01-11T03:14:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="引文"><a href="#引文" class="headerlink" title="引文"></a>引文</h4><p>在学习系统吞吐量、TPS（QPS）、用户并发量、性能測试概念和公式的时候，多次看到这样一个公式<br><code>C&#39;≈C+3√C</code>,其中<code>C=nL / T</code><br>当中C是平均的并发用户数，n是平均每天訪问用户数（login session），L是一天内用户从登录到退出的平均时间（login session的平均时间），T是考察时间长度（一天内多长时间实用户使用系统），C’表示业务并发用户数的峰值。但是这个公式是如何得出的呢？<br><a href="https://www.cnblogs.com/cynchanpin/p/7365859.html" target="_blank" rel="noopener">https://www.cnblogs.com/cynchanpin/p/7365859.html</a></p>
-<h4 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h4><h5 id="数学基础"><a href="#数学基础" class="headerlink" title="数学基础"></a>数学基础</h5><h6 id="泊松分布"><a href="#泊松分布" class="headerlink" title="泊松分布"></a>泊松分布</h6><p>该公式的导出依赖概率论的一个重要的离散概率分布——泊松分布，关于泊松分布的概率函数和分布性质可参考百度百科<br><a href="https://baike.baidu.com/item/%E6%B3%8A%E6%9D%BE%E5%88%86%E5%B8%83/1442110?fr=aladdin" target="_blank" rel="noopener">https://baike.baidu.com/item/%E6%B3%8A%E6%9D%BE%E5%88%86%E5%B8%83/1442110?fr=aladdin</a></p>
-<h6 id="置信水平"><a href="#置信水平" class="headerlink" title="置信水平"></a>置信水平</h6><p>置信水平是指特定个体对待特定命题真实性相信的程度，也就是概率是对个人信念合理性的量度。概率的置信度解释表明，事件本身并没有什么概率，事件之所以指派有概率只是指派概率的人头脑中所具有的信念证据。置信水平是指总体参数值落在样本统计值某一区内的概率；而置信区间是指在某一置信水平下，样本统计值与总体参数值间误差范围。置信区间越大，置信水平越高。<br><a href="https://baike.baidu.com/item/%E7%BD%AE%E4%BF%A1%E6%B0%B4%E5%B9%B3/7442548?fr=aladdin" target="_blank" rel="noopener">https://baike.baidu.com/item/%E7%BD%AE%E4%BF%A1%E6%B0%B4%E5%B9%B3/7442548?fr=aladdin</a></p>
-<h6 id="置信区间"><a href="#置信区间" class="headerlink" title="置信区间"></a>置信区间</h6><p>置信区间是指由样本统计量所构造的总体参数的估计区间。在统计学中，一个概率样本的置信区间（Confidence interval）是对这个样本的某个总体参数的区间估计。置信区间展现的是这个参数的真实值有一定概率落在测量结果的周围的程度。置信区间给出的是被测量参数的测量值的可信程度，即前面所要求的“一个概率”。<br><a href="https://baike.baidu.com/item/%E7%BD%AE%E4%BF%A1%E5%8C%BA%E9%97%B4/7442583?fr=aladdin" target="_blank" rel="noopener">https://baike.baidu.com/item/%E7%BD%AE%E4%BF%A1%E5%8C%BA%E9%97%B4/7442583?fr=aladdin</a></p>
-<h6 id="泊松分布的参数区间估计"><a href="#泊松分布的参数区间估计" class="headerlink" title="泊松分布的参数区间估计"></a>泊松分布的参数区间估计</h6><p><img src="/images/pasted-4.png" alt="upload successful"></p>
-<p><img src="/images/pasted-6.png" alt="upload successful"></p>
-<p><img src="/images/pasted-7.png" alt="upload successful"></p>
-<p><img src="/images/pasted-8.png" alt="upload successful"></p>
-<p><a href="https://wenku.baidu.com/view/09504bc089eb172ded63b787.html" target="_blank" rel="noopener">https://wenku.baidu.com/view/09504bc089eb172ded63b787.html</a></p>
-<h5 id="推导"><a href="#推导" class="headerlink" title="推导"></a>推导</h5><h6 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h6><p>假设用户的login session产生符合泊松分布</p>
-<h6 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h6><p><img src="/images/pasted-9.png" alt="upload successful"></p>
-<p><img src="/images/pasted-10.png" alt="upload successful"><br>从泊松分布的分布图来看，x轴表示参数k的值，该值在我们这里即表示网站某一时刻的用户并发量，y轴表示发生的概率，参数λ是单位时间(或单位面积)内随机事件的平均发生率。<br>求并发用户峰值的问题可以转化为x轴参数k可以取的最大值，即在某一置信区间下该分布的参数区间估计的右侧最大值,即求：泊松分布的参数区间估计右闭区间<code>X+uα/2*√X</code>的值。<br>当显著性水平α=0，即取100%置信水平时，查标准正态分布表可知，uα/2最大取3，即<br><code>X+3√X</code><br>其中X就是网站平均并发用户量C，所以有峰值<br><code>C&#39;=C+3√C</code></p>
-<h5 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h5><p>该公式是由泊松分布的参数估计区间取最大值的情况下得到的。<br>但是这个结果是在非常理想的情况下产生的，并不是计算并发用户峰值的万能公式。<br>可参考<a href="http://dy.163.com/v2/article/detail/CEBT1NFA05169NIJ.html" target="_blank" rel="noopener">http://dy.163.com/v2/article/detail/CEBT1NFA05169NIJ.html</a>  </p>
-<p>此外泊松分布在计算机领域有很多类似的应用，例如设计游戏地图的资源随机生成等。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">数学与算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">泊松分布</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">并发</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">并发峰值</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">并发公式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/运维-测试//" class="article-tag-list-link color1">运维&测试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/11/网站业务并发用户峰值计算公式C‘≈C-3-√3的推导/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/09/hello-world/">Hello World</a>
-    </h1>
+  <div id="SOHUCS" sid="java bit-shift移位运算显真容" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "cytpBL6Un",
+        conf: "a0f0e77fc73c047ed0826102cf4c0790"
+    });
+</script>
+</script>
   
 
-        
-        <a href="/2018/01/09/hello-world/" class="archive-article-date">
-  	<time datetime="2018-01-09T03:11:50.937Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/09/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
+
   
 
 
@@ -447,8 +367,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

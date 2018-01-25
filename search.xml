@@ -3,6 +3,40 @@
   
     
     <entry>
+      <title><![CDATA[java bit shift移位运算显真容]]></title>
+      <url>/2018/01/15/java%20bit-shift%E7%A7%BB%E4%BD%8D%E8%BF%90%E7%AE%97%E6%98%BE%E7%9C%9F%E5%AE%B9/</url>
+      <content type="html"><![CDATA[<h5 id="引文"><a href="#引文" class="headerlink" title="引文"></a>引文</h5><p>在学习java三个基础的移位操作符时，往往聚焦的移位操作符本身是左移”&lt;&lt;”，带符号右移”&gt;&gt;”还是无符号右移”&gt;&gt;&gt;”，而忽略了左右操作数对结果的影响，以下输出打印的结果是什么呢？</p>
+<p>System.out.println(0xff &gt;&gt;&gt; 7);</p>
+<p>System.out.println((((byte) 0xff) &gt;&gt;&gt; 7));  </p>
+<p>System.out.println((byte) (((byte) 0xff) &gt;&gt;&gt; 7));  </p>
+<h5 id="java的三种操作符"><a href="#java的三种操作符" class="headerlink" title="java的三种操作符"></a>java的三种操作符</h5><p><code>&gt;&gt;</code> 是带符号右移，若左操作数是正数，则高位补“0”，若左操作数是负数，则高位补“1”.</p>
+<p><code>&lt;&lt;</code> 将左操作数向左边移动，并且在低位补0.</p>
+<p><code>&gt;&gt;&gt;</code> 是无符号右移，无论左操作数是正数还是负数，在高位都补“0”.</p>
+<h5 id="左右操作数的影响"><a href="#左右操作数的影响" class="headerlink" title="左右操作数的影响"></a>左右操作数的影响</h5><p>三种移位符号作用的左操作数有五种：long,int,short,byte,char,但是在作用不同的操作数类型时，其具体过程不同, 遵循一下几个原则：</p>
+<p>1、int移位时，左边的操作数是32位的，此时的移位符号作用在32位bit上。如：1 &gt;&gt; 3, 是将00000000 00000000 00000000 00000001这32位向右边移动3位。</p>
+<p>2、long 移位时，左边的操作数是64位的，此时移位符号作用在64位bit上。如：1L &gt;&gt; 3。</p>
+<p>3、short, byte,char 在移位之前首先将数据转换为int，这里需要了解java类型转换的一些规则，注意小-&gt;大<br>的带符号的拓展，然后再移位，此时移位符号作用在32为bit上。如：(byte)0xff &gt;&gt;&gt; 7, 是将11111111 11111111 11111111 11111111向右边移动7位，得到00000001 11111111 11111111 11111111。</p>
+<p>4、有1,2可知，当左操作数是long时，移位之后得到的类型是long，当左操作数是其它类型时，移位之后得到的类型是int，所以如果左操作数是byte,char,short 时，你用　&gt;&gt;,&gt;&gt;&gt;, &lt;&lt; 其实是将得到的int 做低位截取得到的数值。</p>
+<p>5、三种移位符号除了对做操作数有操作规则外，其实对右操作数也有操作规则。如果左操作数（转换之后的）是int,那么右操作数只有低５位有效，为什么?因为int 总共就32位，如：23 &gt;&gt; 33, 结果与23 &gt;&gt;1是一样的，都是11；同理，如果左边操作数是long，那么右边操作数只有低6位有效。</p>
+<h5 id="java字面量"><a href="#java字面量" class="headerlink" title="java字面量"></a>java字面量</h5><p>注意java声明字面量的类型，例如0xff 本身就是一个int而不是byte</p>
+<h5 id="引文中的输出结果"><a href="#引文中的输出结果" class="headerlink" title="引文中的输出结果"></a>引文中的输出结果</h5><p>System.out.println(0xff &gt;&gt;&gt; 7);</p>
+<p>其bits为：</p>
+<p>00000000 00000000 00000000 11111111，无符号向右移动7位， 得到的bits当然为：00000000 00000000 00000000 00000001，</p>
+<p>System.out.println((((byte) 0xff) &gt;&gt;&gt; 7));</p>
+<p>(byte)0xff 是一个byte，bits为： 11111111， 首先转换为int，其bits为：11111111 11111111 11111111 11111111， 向右边无符号移动7为，得到的结果bits是：00000001 11111111 11111111 11111111。</p>
+<p>System.out.println((byte) (((byte) 0xff) &gt;&gt;&gt; 7));</p>
+<p>(byte) 0xff 是一个byte，bits为： 11111111， 首先转换为int，其bits为：11111111 11111111 11111111 11111111，向右边无符号移动7为，得到的结果bits是：00000001 11111111 11111111 11111111，然后转换为byte，低位截取得到bits: 11111111, 在输出的时候转换为int， 其bits为：11111111 11111111 11111111 11111111.</p>
+<p>所以上面三个的结果是：</p>
+<p>1</p>
+<p>33554431</p>
+<p>-1  </p>
+<p>参考文章：<br><a href="https://www.jianshu.com/p/0236b51b903f" target="_blank" rel="noopener">https://www.jianshu.com/p/0236b51b903f</a></p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[网站业务并发用户峰值计算公式C‘≈C+3√C的推导]]></title>
       <url>/2018/01/11/%E7%BD%91%E7%AB%99%E4%B8%9A%E5%8A%A1%E5%B9%B6%E5%8F%91%E7%94%A8%E6%88%B7%E5%B3%B0%E5%80%BC%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8FC%E2%80%98%E2%89%88C-3-%E2%88%9A3%E7%9A%84%E6%8E%A8%E5%AF%BC/</url>
       <content type="html"><![CDATA[<h4 id="引文"><a href="#引文" class="headerlink" title="引文"></a>引文</h4><p>在学习系统吞吐量、TPS（QPS）、用户并发量、性能測试概念和公式的时候，多次看到这样一个公式<br><code>C&#39;≈C+3√C</code>,其中<code>C=nL / T</code><br>当中C是平均的并发用户数，n是平均每天訪问用户数（login session），L是一天内用户从登录到退出的平均时间（login session的平均时间），T是考察时间长度（一天内多长时间实用户使用系统），C’表示业务并发用户数的峰值。但是这个公式是如何得出的呢？<br><a href="https://www.cnblogs.com/cynchanpin/p/7365859.html" target="_blank" rel="noopener">https://www.cnblogs.com/cynchanpin/p/7365859.html</a></p>
