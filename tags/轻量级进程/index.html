@@ -6,24 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://blog.wangchengfei.top">
-  <title>java实现线程的三种方式 | 王呈飞的个人微博</title>
+  <title>Tag: 轻量级进程 | 王呈飞的个人微博</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="并发不一定要依赖多线程（如PHP中很常见的多进程并发）。 线程的实现 各个线程既可以共享进程资源（内存地址、文件I/O等），又可以独立调度（线程是CPU调度的基本单位）。 每个已经执行start()且还未结束的java.lang.Thread类的实例就代表了一个线程。Thread的所有关键方法都是声明为Native的。在Java API中，一个Native方法往往意味着这个方法没有使用或无法使用平">
-<meta name="keywords" content="java线程,线程实现模型,内核线程,用户线程,轻量级进程">
-<meta property="og:type" content="article">
-<meta property="og:title" content="java实现线程的三种方式">
-<meta property="og:url" content="https://blog.wangchengfei.top/2018/01/25/java实现线程的三种方式/index.html">
+  <meta name="description" content="developer">
+<meta property="og:type" content="website">
+<meta property="og:title" content="王呈飞的个人微博">
+<meta property="og:url" content="https://blog.wangchengfei.top/tags/轻量级进程/index.html">
 <meta property="og:site_name" content="王呈飞的个人微博">
-<meta property="og:description" content="并发不一定要依赖多线程（如PHP中很常见的多进程并发）。 线程的实现 各个线程既可以共享进程资源（内存地址、文件I/O等），又可以独立调度（线程是CPU调度的基本单位）。 每个已经执行start()且还未结束的java.lang.Thread类的实例就代表了一个线程。Thread的所有关键方法都是声明为Native的。在Java API中，一个Native方法往往意味着这个方法没有使用或无法使用平">
-<meta property="og:image" content="https://blog.wangchengfei.top/images/pasted-11.png">
-<meta property="og:image" content="https://blog.wangchengfei.top/images/pasted-12.png">
-<meta property="og:image" content="https://blog.wangchengfei.top/images/pasted-13.png">
-<meta property="og:image" content="https://blog.wangchengfei.top/images/pasted-14.png">
-<meta property="og:updated_time" content="2018-01-25T07:38:06.722Z">
+<meta property="og:description" content="developer">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java实现线程的三种方式">
-<meta name="twitter:description" content="并发不一定要依赖多线程（如PHP中很常见的多进程并发）。 线程的实现 各个线程既可以共享进程资源（内存地址、文件I/O等），又可以独立调度（线程是CPU调度的基本单位）。 每个已经执行start()且还未结束的java.lang.Thread类的实例就代表了一个线程。Thread的所有关键方法都是声明为Native的。在Java API中，一个Native方法往往意味着这个方法没有使用或无法使用平">
-<meta name="twitter:image" content="https://blog.wangchengfei.top/images/pasted-11.png">
+<meta name="twitter:title" content="王呈飞的个人微博">
+<meta name="twitter:description" content="developer">
   
   
     <link rel="icon" href="/favicon.png">
@@ -157,183 +150,36 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-java实现线程的三种方式" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      java实现线程的三种方式
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/01/25/java实现线程的三种方式/" class="archive-article-date">
+  	<time datetime="2018-01-25T07:24:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-25</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/01/25/java实现线程的三种方式/">java实现线程的三种方式</a>
     </h1>
   
 
-        
-        <a href="/2018/01/25/java实现线程的三种方式/" class="archive-article-date">
-  	<time datetime="2018-01-25T07:24:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>并发不一定要依赖多线程（如PHP中很常见的多进程并发）。</p>
-<p>线程的实现</p>
-<p>各个线程既可以共享进程资源（内存地址、文件I/O等），又可以独立调度（线程是CPU调度的基本单位）。</p>
-<p>每个已经执行start()且还未结束的java.lang.Thread类的实例就代表了一个线程。Thread的所有关键方法都是声明为Native的。在Java API中，一个Native方法往往意味着这个方法没有使用或无法使用平台无关的手段来实现（当然也可能是为了执行效率而使用Native方法，不过，通常最高效的手段也就是平台相关的手段）。</p>
-<p>实现线程主要有3种方式：</p>
-<p>1）使用内核线程实现</p>
-<p>2）使用用户线程实现</p>
-<p>3）使用用户线程加轻量级进程混合实现</p>
-<p>使用内核线程（Kernel-Level Thread，KLT）实现</p>
-<p>内核线程就是直接由操作系统内核（Kernel）支持的线程，这种线程由内核来完成线程切换，内核通过操纵调度器（Scheduler）对线程进行调度，并负责将线程的任务映射到各个处理器上。每个内核线程可以视为内核的一个分身，这样操作系统就有能力同时处理多件事情，支持多线程的内核就叫做多线程内核（Multi-Threads Kernel）。</p>
-<p>程序一般不会直接去使用内核线程，而是去使用内核线程的一种高级接口–轻量级进程（Light Weight Process，LWP），轻量级进程就是我们通常意义上所讲的线程，由于每个轻量级进程都由一个内核线程支持，因此只有先支持内核线程，才能有轻量级进程。这种轻量级进程与内核线程之间1:1的关系称为一对一的线程模型。</p>
-<p>轻量级进程与内核线程之间1:1的关系：</p>
-<p><img src="/images/pasted-11.png" alt="upload successful"><br>由于内核线程的支持，每个轻量级进程都成为一个独立的调度单元，即使有一个轻量级进程在系统调用中阻塞了，也不会影响整个进程继续工作，但是轻量级进程具有它的局限性：首先，由于是基于内核线程实现的，所以各种线程操作，如创建、析构及同步，都需要进行系统调用。而系统调用的代价相对较高，需要在用户态（User Mode）和内核态（Kernel Mode）中来回切换。其次，每个轻量级进程都需要有一个内核线程的支持，因此轻量级进程要消耗一定的内核资源（如内核线程的栈空间），因此一个系统支持轻量级进程的数量是有限的。</p>
-<p>使用用户线程实现</p>
-<p>从广义上来讲，一个线程只要不是内核线程，就可以认为是用户线程（User Thread，UT），轻量级进程也属于用户线程，但轻量级进程的实现始终是建立在内核之上的，许多操作都要进行系统调用，效率会受到限制。</p>
-<p>而狭义上的用户线程指的是完全建立在用户空间的线程库上，系统内核不能感知线程存在的实现。用户线程的建立、同步、销毁和调度完全在用户态中完成，不需要内核的帮助。如果程序实现得当，这种线程不需要切换到内核态，因此操作可以是非常快速且低消耗的，也可以支持规模更大的线程数量，部分高性能数据库中的多线程就是由用户线程实现的。这种进程与用户线程之间1:N的关系称为一对多的线程模型：</p>
-<p><img src="/images/pasted-12.png" alt="upload successful"><br>使用用户线程的优势在于不需要系统内核支援，劣势也在于没有系统内核的支援，所有的线程操作都需要用户程序自己处理。线程的创建、切换和调度都是需要考虑的问题，而且由于操作系统只把处理器资源分配到进程，那诸如“阻塞如何处理”，“多处理器系统中如何将线程映射到其它处理器上”这类问题解决起来将会异常困难，甚至不可能完成。除了以前在不支持多线程的操作系统中（如DOS）的多线程程序与少数有特殊需求的程序外，现在使用用户线程的程序越来越少了，Java、Ruby等语言都曾经使用过用户线程，最终又都放弃使用它。</p>
-<p>使用用户线程加轻量级进程混合实现</p>
-<p>在这种混合实现下，即存在用户线程，也存在轻量级进程。用户线程还是完全建立在用户空间中，因此用户线程的创建、切换、析构等操作依然廉价，并且可以支持大规模的用户线程并发。而操作系统提供支持的轻量级进程则作为用户线程和内核线程之间的桥梁，这样可以使用内核提供的线程调度功能及处理器映射，并且用户线程的系统调用要通过轻量级进程来完成，大大降低了整个进程被完全阻塞的风险。在这种混合模式中，用户线程与轻量级进程的数量比是不定的，即为N:M的关系：</p>
-<p><img src="/images/pasted-13.png" alt="upload successful"><br>许多UNIX系列的操作系统，如Salaris、HP-UX等都提供了N:M的线程模型实现。</p>
-<p>Java线程的实现</p>
-<p>Java线程在JDK1.2之前，是基于称为“绿色线程”（Green Threads）的用户线程实现的，而在JDK1.2中，线程模型替换为基于操作系统原生线程模型来实现。因此，在目前的JDK版本中，操作系统支持怎样的线程模型，在很大程度上决定了Java虚拟机的线程是怎样映射的，这点在不同的平台上没有办法达成一致，虚拟机规范中也并未限定Java线程需要使用哪种线程模型来实现。线程模型只对线程的并发规模和操作成本产生影响，对Java程序的编码和运行过程来说，这些差异都是透明的。</p>
-<p>对于Sun JDK来说，它的Windows版与Linux版都是使用一对一的线程模型实现的，一条Java线程就映射到一条轻量级进程之中，因为Windows和Linux系统提供的线程模型就是一对一的。</p>
-<p>而在Solari平台中，由于操作系统的线程特性可以同时支持一对一（通过Bound Threads或Alternate Libthread实现）及一对多（通过LWP/Thread Based Synchronization实现）的线程模型，因此在Solaris版的JDK中也对应提供了两个平台专有的虚拟机参数：-XX:+UseLWPSynchronization（默认值）和-XX:+UseBoundThreads来明确指定虚拟机使用哪种线程模型。</p>
-<p>Java线程调度</p>
-<p>线程调度是指系统为线程分配处理器使用权的过程，主要调度方式有两种：</p>
-<p>1）协同式线程调度（Cooperative Threads-Scheduling）</p>
-<p>2）抢占式线程调度（Preemptive Threads-Scheduling）</p>
-<p>如果使用协同式调度的多线程系统，线程的执行时间由线程本身来控制，线程把自己的工作执行完了之后，要主动通知系统切换到另外一个线程上。协调式线程调度：</p>
-<p>好处：</p>
-<p>1）实现简单</p>
-<p>2）没有线程同步问题。由于线程要把自己的事情干完后才会进程线程切换，切换操作对线程自己是可知的，所以没有什么线程同步问题。Lua语言中的“协调例程”就是这类实现。</p>
-<p>坏处：</p>
-<p>1）线程执行时间不可控制</p>
-<p>2）甚至如果一个线程编写有问题，一直不告知系统进行线程切换，那么程序就会一直阻塞在那里。很久以前的Windows 3.x系统就是使用协同式来实现多进程多任务的，相当不稳定，一个进程坚持不让出CPU执行时间就可能会导致整个系统崩溃。</p>
-<p>如果使用抢占式调度的多线程系统，那么每个线程将由系统来分配执行时间，线程的切换不由线程本身来决定（在Java中，Thread.yield()可以让出执行时间，但是要获取执行时间的话，线程本身是没有什么办法的）。抢占式线程调度：</p>
-<p>好处：</p>
-<p>1）线程的执行时间是系统可控的</p>
-<p>2）也不会有一个线程导致整个进程阻塞的问题。Java使用的线程调度方式就是抢占式调度。与前面所说的Windows 3.x的例子相对，在Windows 9x/NT内核中就是使用抢占式来实现多进程的，当一个进程出了问题，我们还可以使用任务管理器把这个进程“杀掉”，而不至于导致系统崩溃。</p>
-<p>Java语言一共设置了10个级别的线程优先级（Thread.MIN_PRIORITY至Thread.MAX_PRIORITY），在两个线程同时处于Ready状态时，优先级越高的线程越容易被系统选择执行。</p>
-<p>不过，线程优先级并不是太靠谱，原因是Java的线程是通过映射到系统的原生线程上来实现的，所以线程调度最终还是取决于操作系统，虽然现在很多操作系统都提供线程优先级的概念，但是并不见得能与Java线程的优先级一一对应。</p>
-<p>Solaris中有232种优先级，Windows中只有7种。Windows平台JDK中使用了除THREAD_PRIORITY_IDLE之外的其余6种线程优先级。</p>
-<p>Java线程优先级与Windows线程优先级之间的对应关系：<br>Java线程优先级     Windows线程优先级</p>
-<table>
-<thead>
-<tr>
-<th>1</th>
-<th>（Thread.MIN_PRIORITY）</th>
-<th>THREAD_PRIORITY_LOWEST  </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2</td>
-<td></td>
-<td>THREAD_PRIORITY_LOWEST  </td>
-</tr>
-<tr>
-<td>3</td>
-<td></td>
-<td>THREAD_PRIORITY_BELOW_NORMAL  </td>
-</tr>
-<tr>
-<td>4</td>
-<td></td>
-<td>THREAD_PRIORITY_BELOW_NORMAL</td>
-</tr>
-<tr>
-<td>5</td>
-<td>（Thread.NORM_PRIORITY）</td>
-<td>THREAD_PRIORITY_NORMAL</td>
-</tr>
-<tr>
-<td>6</td>
-<td></td>
-<td>THREAD_PRIORITY_ABOVE_NORMAL</td>
-</tr>
-<tr>
-<td>7</td>
-<td></td>
-<td>THREAD_PRIORITY_ABOVE_NORMAL</td>
-</tr>
-<tr>
-<td>8</td>
-<td></td>
-<td>THREAD_PRIORITY_HIGHEST</td>
-</tr>
-<tr>
-<td>9</td>
-<td></td>
-<td>THREAD_PRIORITY_HIGHEST</td>
-</tr>
-<tr>
-<td>10</td>
-<td>（Thread.MAX_PRIORITY）</td>
-<td>THREAD_PRIORTIY_CRITICAL</td>
-</tr>
-</tbody>
-</table>
-<p>上文说到“线程优先级并不是太靠谱”，不仅仅是说在一些平台上不同的优先级实际会变得相同这一点，还有其它情况让我们不能太依赖优先级：优先级可能会被系统自行改变。例如，在Windows系统中存在一个称为“优先级推进器”（Priority Boosting，它当然可以被关闭掉）的功能，它的大致作用就是当系统发现一个线程执行的特别“勤奋努力”的话，可能会越过线程优先级去为它分配执行时间。因此，我们不能在程序中通过优先级来完全准确地判断一组状态都为Ready的线程将会先执行哪一个。</p>
-<p>状态转换</p>
-<p>线程状态转换关系：</p>
-<p><img src="/images/pasted-14.png" alt="upload successful"><br>Java语言定义了5种线程状态，在任意一个时间点，一个线程只能有且只有其中的一种状态，这5种状态分别如下：</p>
-<p>1）新建（New）：创建后尚未启动的线程处于这种状态。</p>
-<p>2）运行（Runable）：Runable包括了操作系统线程状态中的Running和Ready，也就是处于此状态的线程有可能正在执行，也有可能正在等待着CPU为它分配执行时间。</p>
-<p>3）无限期等待（Waiting）：处于这种状态的线程不会被分配CPU执行时间，它们要等待被其它线程显示地唤醒。以下方法会让线程陷入无限期的等待状态：</p>
-<p>没有设置Timeout参数的Object.wait()方法</p>
-<p>没有设置Timeout参数的Thread.join()方法</p>
-<p>LockSupport.park()方法</p>
-<p>4）限期等待（Timed Waiting）：处于这种状态的线程也不会被分配CPU执行时间，不过无须等待被其它线程显示地唤醒，在一定时间之后它们会由系统自动唤醒。以下方法会让线程进入限期等待状态：</p>
-<p>Thread.sleep()方法</p>
-<p>设置了Timeout参数的Object.wait()方法</p>
-<p>设置了Timeout参数的Thread.join()方法</p>
-<p>LockSupport.parkNanos()方法</p>
-<p>LockSupport.parkUntil()方法</p>
-<p>5）阻塞（Blocked）：线程被阻塞了，“阻塞状态”与“等待状态”的区别是：“阻塞状态”在等待着获取到一个排它锁，这个事件将在另外一个线程放弃这个锁的时候发生；而“等待状态”则是在等待一段时间，或者唤醒动作的发生。在程序等待进入同步区域的时候，线程将进入这种状态。</p>
-<p>6）结束（Terminated）：已终止线程的线程状态，线程已经结束执行。</p>
-<p>参考文章：<a href="http://www.linuxidc.com/Linux/2016-09/135308.htm?utm_source=tuicool&amp;utm_medium=referral" target="_blank" rel="noopener">http://www.linuxidc.com/Linux/2016-09/135308.htm?utm_source=tuicool&amp;utm_medium=referral</a></p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢~<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/images/zhifubao.png">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/images/weixin.png">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -361,116 +207,19 @@
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://blog.wangchengfei.top/2018/01/25/java实现线程的三种方式/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
   
   
-    <a href="/2018/01/15/java bit-shift移位运算显真容/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">java bit shift移位运算显真容</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-  <div id="SOHUCS" sid="java实现线程的三种方式" ></div> 
-<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
-<script type="text/javascript">
-    window.changyan.api.config({
-        appid: "cytpBL6Un",
-        conf: "a0f0e77fc73c047ed0826102cf4c0790"
-    });
-</script>
-</script>
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -493,9 +242,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

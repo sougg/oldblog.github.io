@@ -126,6 +126,20 @@
 ]]></content>
       
         
+        <tags>
+            
+            <tag> java线程 </tag>
+            
+            <tag> 线程实现模型 </tag>
+            
+            <tag> 内核线程 </tag>
+            
+            <tag> 用户线程 </tag>
+            
+            <tag> 轻量级进程 </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
