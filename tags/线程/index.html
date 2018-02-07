@@ -6,19 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://blog.wangchengfei.top">
-  <title>并发的有趣概念 | 王呈飞的个人微博</title>
+  <title>Tag: 线程 | 王呈飞的个人微博</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 从性能的角度看，如果没有任务会阻塞，那么在单处理器上使用并发就没有任何意义从直觉上来说，在单处理器上运行并发程序的开销确实比该程序的所有部分都顺序执行的开销大，因为其中增加了所谓上下文切换的代价（从一个任务切换到另一个任务）。使这个问题变得有些不同的是阻塞,如果程序中的某个任务应为该程序控制范围之外的某些条件（通常是I/O）而导致不能继续执行,那么我们就说这个任务或线程阻塞了。如果没有并发，">
-<meta name="keywords" content="并发,线程,java多线程">
-<meta property="og:type" content="article">
-<meta property="og:title" content="并发的有趣概念">
-<meta property="og:url" content="https://blog.wangchengfei.top/2018/01/25/并发的有趣概念/index.html">
+  <meta name="description" content="developer">
+<meta property="og:type" content="website">
+<meta property="og:title" content="王呈飞的个人微博">
+<meta property="og:url" content="https://blog.wangchengfei.top/tags/线程/index.html">
 <meta property="og:site_name" content="王呈飞的个人微博">
-<meta property="og:description" content="1. 从性能的角度看，如果没有任务会阻塞，那么在单处理器上使用并发就没有任何意义从直觉上来说，在单处理器上运行并发程序的开销确实比该程序的所有部分都顺序执行的开销大，因为其中增加了所谓上下文切换的代价（从一个任务切换到另一个任务）。使这个问题变得有些不同的是阻塞,如果程序中的某个任务应为该程序控制范围之外的某些条件（通常是I/O）而导致不能继续执行,那么我们就说这个任务或线程阻塞了。如果没有并发，">
-<meta property="og:updated_time" content="2018-02-07T06:55:29.719Z">
+<meta property="og:description" content="developer">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="并发的有趣概念">
-<meta name="twitter:description" content="1. 从性能的角度看，如果没有任务会阻塞，那么在单处理器上使用并发就没有任何意义从直觉上来说，在单处理器上运行并发程序的开销确实比该程序的所有部分都顺序执行的开销大，因为其中增加了所谓上下文切换的代价（从一个任务切换到另一个任务）。使这个问题变得有些不同的是阻塞,如果程序中的某个任务应为该程序控制范围之外的某些条件（通常是I/O）而导致不能继续执行,那么我们就说这个任务或线程阻塞了。如果没有并发，">
+<meta name="twitter:title" content="王呈飞的个人微博">
+<meta name="twitter:description" content="developer">
   
   
     <link rel="icon" href="/favicon.png">
@@ -152,68 +150,36 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-并发的有趣概念" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      并发的有趣概念
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/01/25/并发的有趣概念/" class="archive-article-date">
+  	<time datetime="2018-01-25T07:50:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-25</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/01/25/并发的有趣概念/">并发的有趣概念</a>
     </h1>
   
 
-        
-        <a href="/2018/01/25/并发的有趣概念/" class="archive-article-date">
-  	<time datetime="2018-01-25T07:50:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h6 id="1-从性能的角度看，如果没有任务会阻塞，那么在单处理器上使用并发就没有任何意义"><a href="#1-从性能的角度看，如果没有任务会阻塞，那么在单处理器上使用并发就没有任何意义" class="headerlink" title="1. 从性能的角度看，如果没有任务会阻塞，那么在单处理器上使用并发就没有任何意义"></a>1. 从性能的角度看，如果没有任务会阻塞，那么在单处理器上使用并发就没有任何意义</h6><p>从直觉上来说，在单处理器上运行并发程序的开销确实比该程序的所有部分都顺序执行的开销大，因为其中增加了所谓<code>上下文切换</code>的代价（从一个任务切换到另一个任务）。<br>使这个问题变得有些不同的是<code>阻塞</code>,如果程序中的某个任务应为该程序控制范围之外的某些条件（通常是I/O）而导致不能继续执行,那么我们就说这个任务或线程阻塞了。如果没有并发，整个程序都会停下来，指导外部条件发生了变化。但是使用并发就可以在一个任务阻塞后切换执行另一个任务，从整体上提高了程序的执行效率（类似于并行的流水线）。</p>
-<h6 id="2-并发的底层实现选择"><a href="#2-并发的底层实现选择" class="headerlink" title="2. 并发的底层实现选择"></a>2. 并发的底层实现选择</h6><p>实现并发的最直接的方式是在操作系统级别使用进程。<br>这是并发的理想状态，每个任务都作为进程在其自己的地址空间中执行，因此任务之间根本不可能相互干涉。更重要的是，对于进程来说，它们之间没有任何彼此通信的需要，因为它们都是完全独立的。<br>但是遗憾的是，对进程通常会有数量和开销的限制，以避免它们在不同的并发系统之间的可应用性。<br>某些编程语言被设计为可以将并发任务彼此隔离，这些语言通常被称为<code>函数型语言</code>，其中每个函数的调用都不会产生任何副作用（并因此不能干涉其他函数），类似Erlang。<br>java采用了更加传统的方式，在顺序性语言的基础上提供对线程的支持。与在多任务操作系统中分叉外部进程不同，线程机制是在实行程序表示的单一进程中创建任务。这种方式产生的一个好处就是操作系统的透明性，这对java而言是一个非常重要的设计目标。</p>
-<h6 id="3-java基本的线程机制"><a href="#3-java基本的线程机制" class="headerlink" title="3. java基本的线程机制"></a>3. java基本的线程机制</h6><p>并发编程使我们可以将程序划分为多个分离的独立运行的任务。通过多线程机制，这些独立任务中的每一个都由<code>执行线程</code>来驱动。一个线程就是进程中的一个单一的顺序控制流，因此，单个进程可以拥有多个并发执行的任务，但是你的程序使得每个任务都好像有其自己的cpu一样。其底层机制是切分cpu时间，单通常你不需要考虑它。<br>线程模型为编程带来了便利，它简化了在单一程序中同时交织在一起的多个操作的处理。在使用线程时，cpu将轮流给每个任务分配其占用时间（当系统使用时间切片机制时是如此，例如windows，但类似Solaris的FIFO并发模型里，只有高优先级能抢占处理器）。每个任务都觉得自己一直在占用cpu，但事实上cpu时间是划分成片段分配给了所有任务（例外情况是程序确实运行在多个cpu上）</p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢~<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/images/zhifubao.png">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/images/weixin.png">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -233,7 +199,7 @@
 		</ul>
 	</div>
 
-      
+          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -246,123 +212,17 @@
 	</div>
 
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://blog.wangchengfei.top/2018/01/25/并发的有趣概念/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2018/02/07/架构关注点/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          架构关注点
-        
-      </div>
-    </a>
   
   
-    <a href="/2018/01/25/java实现线程的三种方式/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">java实现线程的三种方式</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-  <div id="SOHUCS" sid="并发的有趣概念" ></div> 
-<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
-<script type="text/javascript">
-    window.changyan.api.config({
-        appid: "cytpBL6Un",
-        conf: "a0f0e77fc73c047ed0826102cf4c0790"
-    });
-</script>
-</script>
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -385,9 +245,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
